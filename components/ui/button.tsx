@@ -9,7 +9,7 @@ type ButtonBase = {
 };
 
 const variants = {
-  primary: "bg-cta text-white hover:bg-orange-600",
+  primary: "bg-cta text-city-900 hover:bg-amber-400",
   secondary: "bg-city-700 text-white hover:bg-city-900",
   ghost: "bg-white text-city-900 ring-1 ring-slate-200 hover:ring-city-600"
 };

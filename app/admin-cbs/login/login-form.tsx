@@ -24,7 +24,7 @@ export function LoginForm() {
       });
 
       if (authError) {
-        setError("Email hoac mat khau khong dung.");
+        setError("Email hoặc mật khẩu không đúng.");
         setLoading(false);
         return;
       }
@@ -32,7 +32,7 @@ export function LoginForm() {
       router.replace(searchParams.get("next") || "/admin-cbs/dashboard");
       router.refresh();
     } catch {
-      setError("Chua cau hinh Supabase ENV cho dang nhap admin.");
+      setError("Chưa cấu hình Supabase ENV cho đăng nhập admin.");
       setLoading(false);
     }
   }
@@ -44,12 +44,12 @@ export function LoginForm() {
         <input name="email" type="email" required className="min-h-11 rounded-md border border-slate-300 px-3 outline-city-600" />
       </label>
       <label className="grid gap-1 text-sm font-semibold">
-        Mat khau
+        Mật khẩu
         <input name="password" type="password" required className="min-h-11 rounded-md border border-slate-300 px-3 outline-city-600" />
       </label>
-      <Button type="submit" variant="secondary" disabled={loading}>{loading ? "Dang dang nhap..." : "Dang nhap"}</Button>
+      <Button type="submit" variant="secondary" disabled={loading}>{loading ? "Đang đăng nhập..." : "Đăng nhập"}</Button>
       {error ? <p className="text-sm font-semibold text-red-600">{error}</p> : null}
-      <p className="text-xs leading-5 text-slate-500">Tai khoan admin duoc quan ly trong Supabase Auth. Website khong cho dang ky admin tu do.</p>
+      <p className="text-xs leading-5 text-slate-500">Tài khoản admin được quản lý trong Supabase Auth. Website không cho đăng ký admin tự do.</p>
     </form>
   );
 }

@@ -3,16 +3,16 @@ import type { PartnerRegistrationInput } from "@/lib/validation/partner";
 // Builds the required Vietnamese Telegram message for new partner leads.
 export function formatPartnerTelegramMessage(input: PartnerRegistrationInput) {
   return [
-    "Dang ky doi tac moi - City Blinds",
-    `Ho ten: ${input.fullName}`,
+    "Đăng ký đối tác mới - City Blinds",
+    `Họ tên: ${input.fullName}`,
     `SDT: ${input.phone}`,
     `Cong ty: ${input.companyName}`,
     `Khu vuc: ${input.province}`,
-    `Mo hinh: ${input.businessModel}`,
-    `San pham quan tam: ${input.interestedProducts.join(", ")}`,
-    `Trang gui form: ${input.sourcePage || input.currentUrl || "Khong ro"}`,
+    `Mô hình: ${input.businessModel}`,
+    `Sản phẩm quan tâm: ${input.interestedProducts.join(", ")}`,
+    `Trang gửi form: ${input.sourcePage || input.currentUrl || "Không rõ"}`,
     `Nguon: ${input.utmSource || input.referrerUrl || "Direct"}`,
-    `Thiet bi: ${input.deviceType || "Khong ro"}`,
+    `Thiết bị: ${input.deviceType || "Không rõ"}`,
     `Thoi gian: ${new Date().toISOString()}`
   ].join("\n");
 }

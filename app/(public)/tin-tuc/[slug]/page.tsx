@@ -11,7 +11,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const post = getPost((await params).slug);
   return {
-    title: post?.seoTitle || post?.title || "Tin tuc",
+    title: post?.seoTitle || post?.title || "Tin tức",
     description: post?.metaDescription,
     alternates: post?.canonicalUrl ? { canonical: post.canonicalUrl } : undefined,
     openGraph: post ? { title: post.seoTitle, description: post.metaDescription, images: [post.ogImage] } : undefined

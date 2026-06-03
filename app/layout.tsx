@@ -1,30 +1,38 @@
 import type { Metadata } from "next";
+import { Be_Vietnam_Pro } from "next/font/google";
 import "@/styles/globals.css";
 import { getSiteUrl } from "@/lib/utils/site-url";
+
+const beVietnam = Be_Vietnam_Pro({
+  subsets: ["vietnamese"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-be-vietnam",
+  display: "swap"
+});
 
 // Root layout wires global CSS and safe SEO defaults for public pages.
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: {
-    default: "City Blinds Vietnam - San xuat va phan phoi rem B2B",
+    default: "City Blinds Vietnam - Sản xuất và phân phối rèm B2B",
     template: "%s | City Blinds Vietnam"
   },
   description:
-    "City Blinds san xuat va phan phoi rem cau vong, rem cuon, rem to ong, rem PVC, bat che nang va dong co rem tu dong cho dai ly tai Viet Nam.",
+    "City Blinds sản xuất và phân phối rèm cầu vồng, rèm cuốn, rèm tổ ong, rèm PVC, bạt che nắng và động cơ rèm tự động cho đại lý tại Việt Nam.",
   robots: {
     index: true,
     follow: true
   },
   openGraph: {
     title: "City Blinds Vietnam",
-    description: "Thuong hieu san xuat va phan phoi rem B2B tai Viet Nam.",
+    description: "Thương hiệu sản xuất và phân phối rèm B2B tại Việt Nam.",
     type: "website"
   }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="vi">
+    <html lang="vi" className={beVietnam.variable}>
       <body>{children}</body>
     </html>
   );

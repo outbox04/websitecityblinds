@@ -6,24 +6,24 @@ import { categories } from "@/lib/utils/sample-data";
 export function ProductAdminForm({ mode, id }: { mode: "create" | "edit"; id?: string }) {
   return (
     <AdminShell>
-      <h1 className="mb-5 text-2xl font-bold text-city-900">{mode === "create" ? "Them san pham" : `Sua san pham ${id}`}</h1>
-      <AdminCard title="Thong tin san pham">
+      <h1 className="mb-5 text-2xl font-bold text-city-900">{mode === "create" ? "Thêm sản phẩm" : `Sửa sản phẩm ${id}`}</h1>
+      <AdminCard title="Thông tin sản phẩm">
         <form className="grid gap-4">
           <div className="grid gap-4 md:grid-cols-2">
-            <Input label="Ten san pham" />
+            <Input label="Tên sản phẩm" />
             <Input label="Slug" />
-            <Input label="Ma san pham" />
-            <label className="grid gap-1 text-sm font-semibold">Danh muc<select className="min-h-11 rounded-md border px-3">{categories.map((category) => <option key={category.slug}>{category.name}</option>)}</select></label>
+            <Input label="Mã sản phẩm" />
+            <label className="grid gap-1 text-sm font-semibold">Danh mục<select className="min-h-11 rounded-md border px-3">{categories.map((category) => <option key={category.slug}>{category.name}</option>)}</select></label>
           </div>
-          <Input label="Mo ta ngan" />
-          <Textarea label="Mo ta chi tiet" />
-          <Input label="Anh dai dien URL" />
-          <Textarea label="Gallery anh URL, moi dong mot anh" />
-          <Textarea label="Thong so ky thuat JSON" />
-          <Textarea label="Ung dung, moi dong mot muc" />
-          <Textarea label="Mau rem / mau vai JSON" />
-          <Textarea label="Mau hop rem JSON neu co" />
-          <button className="rounded-md bg-city-700 px-5 py-3 font-bold text-white" type="button">Luu ban ghi</button>
+          <Input label="Mô tả ngắn" />
+          <Textarea label="Mô tả chi tiết" />
+          <Input label="Ảnh đại diện URL" />
+          <Textarea label="Gallery ảnh URL, mỗi dòng một ảnh" />
+          <Textarea label="Thông số kỹ thuật JSON" />
+          <Textarea label="Ứng dụng, mỗi dòng một mục" />
+          <Textarea label="Màu rèm / màu vải JSON" />
+          <Textarea label="Màu hộp rèm JSON nếu có" />
+          <button className="rounded-md bg-city-700 px-5 py-3 font-bold text-white" type="button">Lưu bản ghi</button>
         </form>
       </AdminCard>
     </AdminShell>

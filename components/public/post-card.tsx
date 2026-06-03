@@ -11,7 +11,7 @@ export function PostCard({ post }: { post: Post }) {
         <h3 className="text-xl font-bold text-city-900">{post.title}</h3>
         <p className="mt-2 text-sm leading-6 text-slate-600">{post.excerpt}</p>
         <Link href={`/tin-tuc/${post.slug}`} className="mt-4 inline-flex font-bold text-cta">
-          Doc bai viet
+          Đọc bài viết
         </Link>
       </div>
     </article>

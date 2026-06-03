@@ -5,8 +5,8 @@ import { AdminShell } from "@/components/admin/admin-shell";
 export default function UsersAdminPage() {
   return (
     <AdminShell>
-      <AdminCard title="Quan ly user">
-        <p className="text-sm text-slate-600">Admin user duoc tao va quan ly qua Supabase Auth. Bang profiles luu role admin, editor hoac viewer.</p>
+      <AdminCard title="Quản lý user">
+        <p className="text-sm text-slate-600">Admin user được tạo và quản lý qua Supabase Auth. Bảng profiles lưu role admin, editor hoặc viewer.</p>
       </AdminCard>
     </AdminShell>
   );

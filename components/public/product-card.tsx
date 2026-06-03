@@ -15,7 +15,7 @@ export function ProductCard({ product }: { product: Product }) {
         <h3 className="text-xl font-bold text-city-900">{product.name}</h3>
         <p className="mt-2 min-h-14 text-sm leading-6 text-slate-600">{product.shortDescription}</p>
         <Link href={`/san-pham/${product.slug}`} className="mt-4 inline-flex items-center gap-2 font-bold text-cta">
-          Xem chi tiet <ArrowRight size={16} />
+          Xem chi tiết <ArrowRight size={16} />
         </Link>
       </div>
     </article>

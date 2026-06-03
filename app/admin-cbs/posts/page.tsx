@@ -9,11 +9,18 @@ export default function PostsAdminPage() {
   return (
     <AdminShell>
       <div className="mb-5 flex items-center justify-between gap-4">
-        <h1 className="text-2xl font-bold text-city-900">Quan ly bai viet SEO</h1>
-        <ButtonLink href="/admin-cbs/posts/create">Them bai viet</ButtonLink>
+        <h1 className="text-2xl font-bold text-city-900">Quản lý bài viết SEO</h1>
+        <ButtonLink href="/admin-cbs/posts/create">Thêm bài viết</ButtonLink>
       </div>
-      <AdminCard title="Bai viet">
-        {posts.map((post) => <div key={post.id} className="flex justify-between border-b py-3"><span className="font-semibold">{post.title}</span><Link className="font-bold text-cta" href={`/admin-cbs/posts/edit/${post.id}`}>Sua</Link></div>)}
+      <AdminCard title="Bài viết">
+        {posts.map((post) => (
+          <div key={post.id} className="flex justify-between border-b py-3">
+            <span className="font-semibold">{post.title}</span>
+            <Link className="font-bold text-cta" href={`/admin-cbs/posts/edit/${post.id}`}>
+              Sửa
+            </Link>
+          </div>
+        ))}
       </AdminCard>
     </AdminShell>
   );

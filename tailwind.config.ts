@@ -10,16 +10,19 @@ const config: Config = {
     extend: {
       colors: {
         city: {
-          50: "#eaf7f8",
-          100: "#cfecef",
-          600: "#008c99",
-          700: "#00727d",
-          900: "#06444b"
+          50: "#f2fae8",
+          100: "#dff4c2",
+          600: "#76c817",
+          700: "#5fa80f",
+          900: "#1c2b12"
         },
-        cta: "#f47c20"
+        cta: "#f6a400"
+      },
+      fontFamily: {
+        sans: ["var(--font-be-vietnam)", "system-ui", "sans-serif"]
       },
       boxShadow: {
-        soft: "0 18px 50px rgba(6, 68, 75, 0.12)"
+        soft: "0 18px 50px rgba(28, 43, 18, 0.12)"
       }
     }
   },

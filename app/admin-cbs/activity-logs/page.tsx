@@ -5,8 +5,8 @@ import { AdminShell } from "@/components/admin/admin-shell";
 export default function ActivityLogsAdminPage() {
   return (
     <AdminShell>
-      <AdminCard title="Nhat ky hoat dong">
-        <p className="text-sm text-slate-600">Bang activity_logs luu actor_id, action, entity_type, entity_id, metadata va created_at.</p>
+      <AdminCard title="Nhật ký hoạt động">
+        <p className="text-sm text-slate-600">Bảng activity_logs lưu actor_id, action, entity_type, entity_id, metadata và created_at.</p>
       </AdminCard>
     </AdminShell>
   );

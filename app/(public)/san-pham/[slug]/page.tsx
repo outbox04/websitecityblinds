@@ -11,7 +11,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const product = getProduct((await params).slug);
-  return { title: product?.name || "San pham", description: product?.shortDescription };
+  return { title: product?.name || "Sản phẩm", description: product?.shortDescription };
 }
 
 // Detail page shows product -> fabric color -> optional box color as requested.
@@ -34,15 +34,15 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           <div>
             <div className="mb-2 text-sm font-bold uppercase text-city-700">{category?.name}</div>
             <h1 className="text-4xl font-bold text-city-900">{product.name}</h1>
-            <p className="mt-2 text-sm font-bold text-slate-500">Ma san pham: {product.code}</p>
+            <p className="mt-2 text-sm font-bold text-slate-500">Mã sản phẩm: {product.code}</p>
             <p className="mt-5 text-base leading-8 text-slate-600">{product.description}</p>
-            <ButtonLink href="/doi-tac-ban-hang" className="mt-6">Dang ky doi tac ban hang</ButtonLink>
+            <ButtonLink href="/doi-tac-ban-hang" className="mt-6">Đăng ký đối tác bán hàng</ButtonLink>
           </div>
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           <div className="rounded-md border border-slate-200 p-5">
-            <h2 className="mb-4 text-2xl font-bold text-city-900">Thong so ky thuat</h2>
+            <h2 className="mb-4 text-2xl font-bold text-city-900">Thông số kỹ thuật</h2>
             <dl className="grid gap-3">
               {Object.entries(product.specs).map(([key, value]) => (
                 <div key={key} className="flex justify-between gap-4 border-b border-slate-100 pb-2 text-sm">
@@ -53,7 +53,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             </dl>
           </div>
           <div className="rounded-md border border-slate-200 p-5">
-            <h2 className="mb-4 text-2xl font-bold text-city-900">Ung dung</h2>
+            <h2 className="mb-4 text-2xl font-bold text-city-900">Ứng dụng</h2>
             <ul className="grid gap-2 text-slate-600">
               {product.applications.map((item) => <li key={item}>- {item}</li>)}
             </ul>
@@ -61,13 +61,13 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
-          <ColorPanel title="Mau rem / mau vai" colors={product.fabricColors} />
-          {product.boxColors?.length ? <ColorPanel title="Mau hop rem" colors={product.boxColors} /> : null}
+          <ColorPanel title="Màu rèm / màu vải" colors={product.fabricColors} />
+          {product.boxColors?.length ? <ColorPanel title="Màu hộp rèm" colors={product.boxColors} /> : null}
         </div>
 
         {related.length ? (
           <div className="mt-12">
-            <SectionHeading title="San pham lien quan" description={`Cac san pham cung danh muc ${categories.find((item) => item.slug === product.categorySlug)?.name}.`} />
+            <SectionHeading title="Sản phẩm liên quan" description={`Các sản phẩm cùng danh mục ${categories.find((item) => item.slug === product.categorySlug)?.name}.`} />
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {related.map((item) => <ProductCard key={item.id} product={item} />)}
             </div>

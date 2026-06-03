@@ -5,8 +5,8 @@ import { AdminShell } from "@/components/admin/admin-shell";
 export default function PartnersAdminPage() {
   return (
     <AdminShell>
-      <AdminCard title="CRM dang ky doi tac">
-        <p className="text-sm leading-6 text-slate-600">Ket noi bang partner_registrations de xem ho ten, SDT, cong ty, khu vuc, mo hinh, san pham quan tam, source_page, UTM, referrer, current_url, device_type va created_at.</p>
+      <AdminCard title="CRM đăng ký đối tác">
+        <p className="text-sm leading-6 text-slate-600">Kết nối bảng partner_registrations để xem họ tên, SĐT, công ty, khu vực, mô hình, sản phẩm quan tâm, source_page, UTM, referrer, current_url, device_type và created_at.</p>
       </AdminCard>
     </AdminShell>
   );

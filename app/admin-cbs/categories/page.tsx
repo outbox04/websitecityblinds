@@ -6,7 +6,7 @@ import { categories } from "@/lib/utils/sample-data";
 export default function CategoriesAdminPage() {
   return (
     <AdminShell>
-      <AdminCard title="Quan ly danh muc san pham">
+      <AdminCard title="Quản lý danh mục sản phẩm">
         <div className="grid gap-3">{categories.map((category) => <div key={category.id} className="rounded-md border p-3"><b>{category.name}</b><p className="text-sm text-slate-600">{category.description}</p></div>)}</div>
       </AdminCard>
     </AdminShell>

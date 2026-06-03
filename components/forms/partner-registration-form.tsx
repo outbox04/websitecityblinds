@@ -41,25 +41,25 @@ export function PartnerRegistrationForm({ formLocation = "public" }: { formLocat
 
     if (response.ok) {
       setStatus("success");
-      setMessage("Cam on ban. Doi ngu City Blinds se lien he de trao doi hop tac.");
+      setMessage("Cảm ơn bạn. Đội ngũ City Blinds sẽ liên hệ để trao đổi hợp tác.");
     } else {
       setStatus("error");
-      setMessage("Thong tin chua hop le hoac he thong dang ban. Vui long thu lai.");
+      setMessage("Thông tin chưa hợp lệ hoặc hệ thống đang bận. Vui lòng thử lại.");
     }
   }
 
   return (
     <form action={submit} className="grid gap-4 rounded-md border border-slate-200 bg-white p-5 shadow-soft">
       <div className="grid gap-4 md:grid-cols-2">
-        <Field name="fullName" label="Ho va ten" required />
-        <Field name="phone" label="So dien thoai" required />
+        <Field name="fullName" label="Họ và tên" required />
+        <Field name="phone" label="Số điện thoại" required />
         <Field name="email" label="Email" type="email" />
-        <Field name="companyName" label="Ten cua hang / cong ty" required />
-        <Field name="province" label="Tinh thanh" required />
-        <Field name="businessModel" label="Mo hinh kinh doanh" required />
+        <Field name="companyName" label="Tên cửa hàng / công ty" required />
+        <Field name="province" label="Tỉnh thành" required />
+        <Field name="businessModel" label="Mô hình kinh doanh" required />
       </div>
       <fieldset className="grid gap-3">
-        <legend className="text-sm font-bold text-city-900">San pham quan tam</legend>
+        <legend className="text-sm font-bold text-city-900">Sản phẩm quan tâm</legend>
         <div className="grid gap-2 sm:grid-cols-2">
           {categories.map((category) => (
             <label key={category.slug} className="flex items-center gap-2 rounded-md border border-slate-200 px-3 py-2 text-sm">
@@ -70,10 +70,10 @@ export function PartnerRegistrationForm({ formLocation = "public" }: { formLocat
         </div>
       </fieldset>
       <label className="grid gap-1 text-sm font-semibold text-slate-700">
-        Ghi chu
+        Ghi chú
         <textarea name="note" rows={4} className="rounded-md border border-slate-300 px-3 py-2 outline-city-600" />
       </label>
-      <Button type="submit" disabled={status === "submitting"}>{status === "submitting" ? "Dang gui..." : "Tro thanh doi tac City Blinds"}</Button>
+      <Button type="submit" disabled={status === "submitting"}>{status === "submitting" ? "Đang gửi..." : "Trở thành đối tác City Blinds"}</Button>
       {message ? <p className={status === "success" ? "text-sm font-semibold text-city-700" : "text-sm font-semibold text-red-600"}>{message}</p> : null}
     </form>
   );
