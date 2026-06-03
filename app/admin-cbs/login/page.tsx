@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { LoginForm } from "./login-form";
 
 export const metadata: Metadata = {
@@ -15,7 +16,9 @@ export default function AdminLoginPage() {
           <div className="mx-auto mb-3 grid h-14 w-14 place-items-center rounded-md bg-city-700 text-xl font-bold text-white">CB</div>
           <h1 className="text-2xl font-bold text-city-900">City Blinds Admin</h1>
         </div>
-        <LoginForm />
+        <Suspense>
+          <LoginForm />
+        </Suspense>
       </section>
     </main>
   );
