@@ -1,0 +1,4 @@
+// JSON-LD helper keeps structured data isolated from visual components.
+export function JsonLd({ data }: { data: Record<string, unknown> }) {
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
+}
