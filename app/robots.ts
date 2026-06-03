@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
+import { getSiteUrl } from "@/lib/utils/site-url";
 
 // Robots excludes admin routes from crawlers while allowing public SEO pages.
 export default function robots(): MetadataRoute.Robots {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const siteUrl = getSiteUrl();
 
   return {
     rules: {

@@ -75,7 +75,6 @@ SUPABASE_SERVICE_ROLE_KEY=
 TELEGRAM_BOT_TOKEN=
 TELEGRAM_CHAT_ID=
 TELEGRAM_API_SECRET=
-NEXT_PUBLIC_SITE_URL=
 ```
 
 Create admin users in Supabase Auth, then insert the matching row into `profiles` with an allowed role.

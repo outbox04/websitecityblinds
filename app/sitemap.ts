@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
 import { posts, products } from "@/lib/utils/sample-data";
+import { getSiteUrl } from "@/lib/utils/site-url";
 
 // Sitemap deliberately lists only public URLs; admin routes stay hidden.
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const siteUrl = getSiteUrl();
   const staticRoutes = ["", "/gioi-thieu", "/san-pham", "/doi-tac-ban-hang", "/tin-tuc", "/lien-he"];
 
   return [

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
+import { getSiteUrl } from "@/lib/utils/site-url";
 
 // Root layout wires global CSS and safe SEO defaults for public pages.
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  metadataBase: new URL(getSiteUrl()),
   title: {
     default: "City Blinds Vietnam - San xuat va phan phoi rem B2B",
     template: "%s | City Blinds Vietnam"
